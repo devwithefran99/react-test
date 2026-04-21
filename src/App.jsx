@@ -1,14 +1,25 @@
 import React , {useState} from 'react' ;
 import { useCounter } from './hooks/useCounter';
 import './App.css';
+import AddToDo from './components/AddToDo';
+import "./todo.css" ;
+import TodoList from './components/TodoList';
 
 const App = () => {
 const { count, counterHandler, decrementHandler, resetHabdler } = useCounter();
 
   return (
     <div>
+      <div className="wrapper d-block">
 
-      <AddToDo />
+
+
+<AddToDo />
+
+<TodoList />
+      </div>
+
+      
       <h1>Add to cart - ({count})</h1>
       <button className="btn btn-danger" onClick={decrementHandler}>Decrement</button>
       <button className="btn btn-primary" onClick={counterHandler}>Increment</button>
