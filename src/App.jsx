@@ -1,14 +1,16 @@
 import React , {useState} from 'react' ;
 import { useCounter } from './hooks/useCounter';
+import Swal from 'sweetalert2'
 import './App.css';
 import AddToDo from './components/AddToDo';
 import "./todo.css" ;
 import TodoList from './components/TodoList';
 
+
 const App = () => {
 const { count, counterHandler, decrementHandler, resetHandler } = useCounter();
 
-const [ todos , setTodos] = useState(['. hello world'])
+const [ todos , setTodos] = useState(['. hello'])
 console.log(typeof todos);
 
 
@@ -21,9 +23,9 @@ console.log(typeof todos);
 
 
 
-<AddToDo setTodos={setTodos} />
+    <AddToDo setTodos={setTodos} />
 
-<TodoList todos = {todos} />
+    <TodoList todos = {todos} />
       </div>
 
       
