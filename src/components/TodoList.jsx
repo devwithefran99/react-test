@@ -1,14 +1,16 @@
 import React from 'react'
 import Lists from './Lists'
 
-const TodoList = () => {
+const TodoList = ({todos}) => {
 
     return (
      <div className="card mt-3">
         <div className="card-body">
-            <Lists/>
-            <Lists/>
-           
+            {todos.map((todo , index) => (
+                <Lists key={index} data = {todo}  index = {index} />
+                ))}
+            
+    
         </div>
      </div>
     )

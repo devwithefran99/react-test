@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import Btn from './Btn';
 
-const AddToDo = () => {
+const AddToDo = ({setTodos}) => {
 
     const [input , setInput] = useState('')
 
     const formSubmit = (e) => {
-        e.preventDefualt();
-        console.log('form Submited!');
+       e.preventDefault();
+if(input.length <= 3){
+    return false
+}else {
+       setTodos(prev => [input, ...prev])
+        setInput('')
+}
         
     }
 
